@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .bg{
+
+    }
+
+    .top{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: url('https://www.bmw.co.jp/content/dam/bmw/marketJP/bmw_co_jp/teaser/large/large20170705-iperformance-xxl_v02.jpg/jcr:content/renditions/cq5dam.resized.img.1680.large.time1499219285639.jpg');
+        background-size: cover;
+        clip-path: url(#cliptop);
+    }
+</style>
+<body>
+    <svg class="bg" width="100%" height="100%" viewBox="0 0 1920 1080">
+        <clipPath id="clipTop" clip-rule="evenodd">
+            <polygon points="0,0 1920,0 960,540"/>
+        </clipPath>
+        <clipPath id="clipBottom" clip-rule="evenodd">
+            <polygon points="0,0 1920,0 960,540"/>
+        </clipPath>
+        <clipPath id="clipLeft" clip-rule="evenodd">
+            <polygon points="0,0 1920,0 960,540"/>
+        </clipPath>
+        <clipPath id="clipRight" clip-rule="evenodd">
+            <polygon points="0,0 1920,0 960,540"/>
+        </clipPath>
+        <image xmlns:xlink="http://www.w3.org/1999/xlink" id="imageTop"
+               xlink:href="https://www.bmw.co.jp/content/dam/bmw/marketJP/bmw_co_jp/teaser/large/large20170705-iperformance-xxl_v02.jpg/jcr:content/renditions/cq5dam.resized.img.1680.large.time1499219285639.jpg"
+               width="100%" height="50%" preserveAspectRatio="slice" clip-path="url(#clipTop)"/>
+        <image xmlns:xlink="http://www.w3.org/1999/xlink" id="imageBottom"
+               xlink:href="https://www.bmw.co.jp/content/dam/bmw/marketJP/bmw_co_jp/teaser/large/large20170705-iperformance-xxl_v02.jpg/jcr:content/renditions/cq5dam.resized.img.1680.large.time1499219285639.jpg"
+               y="50%" width="100%" height="50%" preserveAspectRatio="slice" clip-path="url(#clipBottom)"/>
+        <image xmlns:xlink="http://www.w3.org/1999/xlink" id="imageLeft"
+               xlink:href="https://www.bmw.co.jp/content/dam/bmw/marketJP/bmw_co_jp/teaser/large/large20170705-iperformance-xxl_v02.jpg/jcr:content/renditions/cq5dam.resized.img.1680.large.time1499219285639.jpg"
+               width="50%" height="100%" preserveAspectRatio="slice" clip-path="url(#clipLeft)"/>
+        <image xmlns:xlink="http://www.w3.org/1999/xlink" id="imageRight"
+               xlink:href="https://www.bmw.co.jp/content/dam/bmw/marketJP/bmw_co_jp/teaser/large/large20170705-iperformance-xxl_v02.jpg/jcr:content/renditions/cq5dam.resized.img.1680.large.time1499219285639.jpg"
+               x='50%' width="50%" height="100%" preserveAspectRatio="slice" clip-path="url(#clipRight)"/>
+
+    </svg>
+    <div class="top" clip-path="url(#clipTop)"></div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+  var bg = document.querySelector('.bg');
+  var clipTop = document.querySelector('#clipTop polygon');
+  var clipBottom = document.querySelector('#clipBottom polygon');
+  var clipLeft = document.querySelector('#clipLeft polygon');
+  var clipRight = document.querySelector('#clipRight polygon');
+  var imageTop = document.querySelector('#imageTop');
+  var imageBottom = document.querySelector('#imageBottom');
+  var imageLeft = document.querySelector('#imageLeft');
+  var imageRight = document.querySelector('#imageRight');
+
+    window.addEventListener('resize', function() {
+      console.log('resize');
+      fitViewBox();
+    });
+
+  fitViewBox();
+
+    function fitViewBox() {
+      const height = window.innerHeight;
+      const width = window.innerWidth;
+      const center = `${width/2},${height/2}`;
+      bg.viewBox.baseVal.width = width;
+      bg.viewBox.baseVal.height = height;
+      $(clipTop).attr('points', `0,0 ${width},0 ${center}`);
+      $(clipBottom).attr('points', `0,${height} ${width},${height} ${center}`);
+      $(clipLeft).attr('points', `0,0 0,${height} ${center}`);
+      $(clipRight).attr('points', `${width},0 ${width},${height} ${center}`);
+
+//      $(imageTop).attr('points', `0,0 ${width},0 ${center}`);
+//      $(imageBottom).attr('points', `0,${height} ${width},${height} ${center}`);
+//      $(imageLeft).attr('points', `0,0 0,${height} ${center}`);
+//      $(imageRight).attr('points', `${width},0 ${width},${height} ${center}`);
+    }
+</script>
+</html>
