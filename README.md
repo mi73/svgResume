@@ -11,11 +11,7 @@ SVGの基本構造
 ```
 svgタグの子（孫）要素として記述します。上の例ではcircleタグとrectタグを使って円と四角形を描画しています。
 
-<<<<<<< HEAD
-##HTMLでの表示方法
-=======
 ## HTMLでの表示方法
->>>>>>> e13894022c07e5df0d9d6a8456640873777bb245
 
 - objectタグを用いる
 ```html
@@ -48,11 +44,7 @@ svgタグをhtmlに埋め込んで使う。今回は、ここで使うことを�
 </html>
 ```
 
-<<<<<<< HEAD
-##要素
-=======
 ## 要素
->>>>>>> e13894022c07e5df0d9d6a8456640873777bb245
 
 #### width, height, viewbox
 サイズの指定には以上の三つを使います。width, heightは通常の画像と同様の扱いです。
@@ -70,11 +62,7 @@ viewboxに関しては、svgタグの中で仮想の２次元空間を持って�
 
 課題: preserveAspectRatio
 
-<<<<<<< HEAD
-###基本図形
-=======
 ### 基本図形
->>>>>>> e13894022c07e5df0d9d6a8456640873777bb245
 
 扱える図形は以下の９つです。
 
@@ -113,11 +101,7 @@ viewboxに関しては、svgタグの中で仮想の２次元空間を持って�
 </svg>
 ```
 
-<<<<<<< HEAD
-##rect
-=======
 ## rect
->>>>>>> e13894022c07e5df0d9d6a8456640873777bb245
 四角形を描画します。x,yで始点を、width,heightで大きさを、rx,ryで角丸を定義することができる。
 
 ```html
@@ -127,11 +111,7 @@ viewboxに関しては、svgタグの中で仮想の２次元空間を持って�
 </svg>
 ```
 
-<<<<<<< HEAD
-##circle,
-=======
 ## circle,
->>>>>>> e13894022c07e5df0d9d6a8456640873777bb245
 円を描画します。中心座標をcx,cyで定義をして、半径をrで定義する。(centerX, centerY, Radius)
 ```html
 <svg viewBox="0 0 200 200">
@@ -139,11 +119,7 @@ viewboxに関しては、svgタグの中で仮想の２次元空間を持って�
 </svg>
 ```
 
-<<<<<<< HEAD
-##ellipse
-=======
 ## ellipse
->>>>>>> e13894022c07e5df0d9d6a8456640873777bb245
 楕円を描画します。中心座標をcx,cyで定義をして、半径をrx,ryで定義する。(CenterX, CenterY, RadiusX, RadiusY)
 
 ```html
@@ -151,12 +127,7 @@ viewboxに関しては、svgタグの中で仮想の２次元空間を持って�
     <ellipse cx="120" cy="140" rx="50" ry="30" stroke="black" stroke-width="1" fill="yellow"/>
 </svg>
 ```
-
-<<<<<<< HEAD
-##polyline
-=======
 ## polyline
->>>>>>> e13894022c07e5df0d9d6a8456640873777bb245
 折れ線を描画します。points属性に頂点のリストを定義します。
 ```html
 <svg viewBox="0 0 200 200">
@@ -164,11 +135,7 @@ viewboxに関しては、svgタグの中で仮想の２次元空間を持って�
 </svg>
 ```
 
-<<<<<<< HEAD
-##polygon
-=======
 ## polygon
->>>>>>> e13894022c07e5df0d9d6a8456640873777bb245
 多角形を描画します。同様にpoints属性に頂点のリストを定義します。polyline要素との違いはpathが閉じられるか否かです。
 ```html
 <svg viewBox="0 0 200 200">
@@ -247,11 +214,7 @@ Lコマンドは現在位置から任意の座標に，Hコマンドは現在の
 </svg>
 ```
 
-<<<<<<< HEAD
-##2次ベジェ曲線
-=======
 ## 2次ベジェ曲線
->>>>>>> e13894022c07e5df0d9d6a8456640873777bb245
 2次ベジェ曲線を引くにはQコマンド及びTコマンドを用いる．Qコマンドでは制御点と次頂点の2つを指定する．
 Tコマンドを用いて制御点の指定を省略することが出来る．前回用いた制御点から点対称の位置を新たな制御点として利用することで，曲線を滑らかにつなぐ
 ```html
@@ -266,11 +229,7 @@ Tコマンドを用いて制御点の指定を省略することが出来る．�
 ```
 課題:3次ベジェ曲線
 
-<<<<<<< HEAD
-##円弧
-=======
 ## 円弧
->>>>>>> e13894022c07e5df0d9d6a8456640873777bb245
 
 円弧を引くにはA操作を行う．一般に始点と終点を通る半径が一定の円弧を考えると，長くて時計回り短くて時計回り長くて反時計回り短くて反時計回りの4曲線が得られる．従って，始点から終点に円弧を書く際にどのような円弧を引くかについてlarge-arc-flagでは円弧の長さの選択し，sweep-flagでは円弧の方向を選択する．
 構文は「A rx,ry x-axis-rotation large-arc-flag,sweep-flag x,y」と非常に長いので面倒ではある．
@@ -288,11 +247,8 @@ Tコマンドを用いて制御点の指定を省略することが出来る．�
 
 課題:fill-rule
 
-<<<<<<< HEAD
-##stroke-dasharray
-=======
 ## stroke-dasharray
->>>>>>> e13894022c07e5df0d9d6a8456640873777bb245
+
 stroke-dasharrayを設定すると点線になる．描画部と非描画部の長さをリスト形式で記述し，点線のパターンを定義する．stroke-dashoffset属性は点線の開始位置を指定する。
 これを利用してJSで描くようなアニメーションを作成している。
 
@@ -324,19 +280,11 @@ stroke-dasharrayを設定すると点線になる．描画部と非描画部の�
         <path d="M10,60h180" stroke-dasharray="20,30,10"/>
     </g>
 </svg>
-```
 
-<<<<<<< HEAD
-課題:stroke-linecap, stroke-linejoin, stroke-miterlimit, path.getTotalLength()
-                                   
-
-##グループ化
-=======
 課題　:stroke-linecap, stroke-linejoin, stroke-miterlimit, path.getTotalLength()
                                    
-
 ## グループ化
->>>>>>> e13894022c07e5df0d9d6a8456640873777bb245
+
 gタグによってグループ化することができる。
 ```html
 <svg viewBox="0 0 200 200">
@@ -351,11 +299,7 @@ gタグによってグループ化することができる。
 </svg>
 ```
 
-<<<<<<< HEAD
-##図形の変形
-=======
 ## 図形の変形
->>>>>>> e13894022c07e5df0d9d6a8456640873777bb245
 
 省略((*´∀｀*))
 http://defghi1977.html.xdomain.jp/tech/svgMemo/svgMemo_04.htm
@@ -447,11 +391,7 @@ text要素に設定した座標を基準にテキストが描画されるが，�
 </svg>
 ```
 
-<<<<<<< HEAD
-###textPath
-=======
 ### textPath
->>>>>>> e13894022c07e5df0d9d6a8456640873777bb245
 textPath要素を用いると予め定義しておいた曲線の上に文字列を配置することが出来る．文字描画の基底線が曲線に接するように配置される．（chromeでは不具合が出るケースがある．）
 テキストの幅はパス上の長さで計算されるため，文字間の間隔が広がって見えたり詰まって見えてしまうのは致し方ない．
 
@@ -512,11 +452,8 @@ SVGによるグラデーションはCSS3におけるグラデーションのよ�
 ```
 課題: linearGradient, radialGradient, gradientUnits, spreadMethod
 
-<<<<<<< HEAD
-##clip-path
-=======
 ## clip-path
->>>>>>> e13894022c07e5df0d9d6a8456640873777bb245
+
 clipPath要素は任意のクリップ領域を定義する．他の要素はこのclipPath要素をclip-path属性に設定することでstrokeやfillによる描画の範囲を制限することが出来る．clipPath要素の子に配置された図形要素の外形がクリップ領域として解釈される．image要素なども設定できるが，単なる矩形として扱われるため意味がない．
 またg要素，use要素を用いることはできないので，どうしても必要であればmask要素を用いると良い
 
@@ -534,12 +471,8 @@ clipPath要素は任意のクリップ領域を定義する．他の要素はこ
     <circle clip-path="url(#clip)" cx="100" cy="100" r="90" stroke="pink" stroke-width="10" fill="red"/>
 </svg>
 ```
-
-<<<<<<< HEAD
-##mask
-=======
 ## mask
->>>>>>> e13894022c07e5df0d9d6a8456640873777bb245
+
 クリップと同様の機能を提供するものとしてマスクがある．mask要素を設定することでマスク画像を定義することが出来る．クリップが画像の繰り抜きであることに対し，マスクは画像の合成を行なって透かしのような効果を得る．マスク画像の輝度に応じた描画が為され，暗い部分ほど薄く（透明に）描画される．よってマスク画像の色味にはそれほど意味がない．なおマスク画像の色がwhiteである場合はクリップの場合と同じ結果となる．
 
 ```html
@@ -558,15 +491,8 @@ clipPath要素は任意のクリップ領域を定義する．他の要素はこ
 ```
 
 ### appendix
-<<<<<<< HEAD
-http://www.atmarkit.co.jp/ait/articles/1206/01/news143.html
-http://defghi1977.html.xdomain.jp/tech/svgMemo/svgMemo_01.htm
-=======
 拡張機能
 - https://chrome.google.com/webstore/detail/web-maker/lkfkkhfhhdkiemehlpkgjeojomhpccnh
 資料
 - http://www.atmarkit.co.jp/ait/articles/1206/01/news143.html
 - http://defghi1977.html.xdomain.jp/tech/svgMemo/svgMemo_01.htm
-
-
->>>>>>> e13894022c07e5df0d9d6a8456640873777bb245
