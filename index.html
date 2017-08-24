@@ -3,21 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
 </head>
 <style>
-    .bg{
-
-    }
-
-    .top{
-        position: absolute;
-        top: 0;
-        left: 0;
+    .videoTop {
         width: 100%;
-        height: 50%;
-        background: url('https://www.bmw.co.jp/content/dam/bmw/marketJP/bmw_co_jp/teaser/large/large20170705-iperformance-xxl_v02.jpg/jcr:content/renditions/cq5dam.resized.img.1680.large.time1499219285639.jpg');
-        background-size: cover;
-        clip-path: url(#cliptop);
+        height: 100%;
+        -webkit-clip-path: url(#clipTop);
+        clip-path: url(#clipTop);
+    }
+    .videoBottom {
+        width: 100%;
+        height: 100%;
+        -webkit-clip-path: url(#clipBottomVideo);
+        clip-path: url(#clipBottomVideo);
+    }
+    .clipVideo video{
+        width: 100%;
+        transition: opacity 0.4s;
+    }
+    video:hover {
+        opacity: 0.5;
     }
 </style>
 <body>
@@ -34,56 +40,98 @@
         <clipPath id="clipRight" clip-rule="evenodd">
             <polygon points="0,0 1920,0 960,540"/>
         </clipPath>
-        <image xmlns:xlink="http://www.w3.org/1999/xlink" id="imageTop"
+        <clipPath id="clipBottomVideo" clip-rule="evenodd">
+            <polygon points="0,540 1920,540 960,0"/>
+        </clipPath>
+        <image xmlns:xlink="http://www.w3.org/1999/xlink" class="imageTop"
                xlink:href="https://www.bmw.co.jp/content/dam/bmw/marketJP/bmw_co_jp/teaser/large/large20170705-iperformance-xxl_v02.jpg/jcr:content/renditions/cq5dam.resized.img.1680.large.time1499219285639.jpg"
-               width="100%" height="50%" preserveAspectRatio="slice" clip-path="url(#clipTop)"/>
-        <image xmlns:xlink="http://www.w3.org/1999/xlink" id="imageBottom"
+               width="100%" height="50%" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipTop)"/>
+        <image xmlns:xlink="http://www.w3.org/1999/xlink" class="imageBottom"
                xlink:href="https://www.bmw.co.jp/content/dam/bmw/marketJP/bmw_co_jp/teaser/large/large20170705-iperformance-xxl_v02.jpg/jcr:content/renditions/cq5dam.resized.img.1680.large.time1499219285639.jpg"
-               y="50%" width="100%" height="50%" preserveAspectRatio="slice" clip-path="url(#clipBottom)"/>
-        <image xmlns:xlink="http://www.w3.org/1999/xlink" id="imageLeft"
+               y="50%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipBottom)"/>
+        <image xmlns:xlink="http://www.w3.org/1999/xlink" class="imageLeft"
                xlink:href="https://www.bmw.co.jp/content/dam/bmw/marketJP/bmw_co_jp/teaser/large/large20170705-iperformance-xxl_v02.jpg/jcr:content/renditions/cq5dam.resized.img.1680.large.time1499219285639.jpg"
-               width="50%" height="100%" preserveAspectRatio="slice" clip-path="url(#clipLeft)"/>
-        <image xmlns:xlink="http://www.w3.org/1999/xlink" id="imageRight"
+               width="50%" height="100%" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipLeft)"/>
+        <image xmlns:xlink="http://www.w3.org/1999/xlink" class="imageRight"
                xlink:href="https://www.bmw.co.jp/content/dam/bmw/marketJP/bmw_co_jp/teaser/large/large20170705-iperformance-xxl_v02.jpg/jcr:content/renditions/cq5dam.resized.img.1680.large.time1499219285639.jpg"
-               x='50%' width="50%" height="100%" preserveAspectRatio="slice" clip-path="url(#clipRight)"/>
-
+               x='50%' width="50%" height="100%" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipRight)"/>
+        <foreignObject width="100%" height="50%" x="0" y="0" clip-path="url(#clipTop)">
+            <div class="videoTop clipVideo">
+                <video  controls="none" autoplay="true" loop="true">
+                    <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4">
+                </video>
+            </div>
+        </foreignObject>
+        <foreignObject width="100%" height="50%" x="0" y="50%" clip-path="url(#clipBottom)">
+            <div class="videoBottom clipVideo">
+                <video  controls="none" autoplay="true" loop="true">
+                    <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8_512kb.mp4" type="video/mp4">
+                </video>
+            </div>
+        </foreignObject>
     </svg>
-    <div class="top" clip-path="url(#clipTop)"></div>
+    <!--<div class="videoTop clipVideo">-->
+        <!--<video  controls="none" autoplay="true" loop="true">-->
+            <!--<source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4">-->
+        <!--</video>-->
+    <!--</div>-->
+    <!--<div class="videoBottom clipVideo">-->
+        <!--<video  controls="none" autoplay="true" loop="true">-->
+            <!--<source src="https://archive.org/download/WebmVp8Vorbis/webmvp8_512kb.mp4" type="video/mp4">-->
+        <!--</video>-->
+    <!--</div>-->
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
-  var bg = document.querySelector('.bg');
-  var clipTop = document.querySelector('#clipTop polygon');
-  var clipBottom = document.querySelector('#clipBottom polygon');
-  var clipLeft = document.querySelector('#clipLeft polygon');
-  var clipRight = document.querySelector('#clipRight polygon');
-  var imageTop = document.querySelector('#imageTop');
-  var imageBottom = document.querySelector('#imageBottom');
-  var imageLeft = document.querySelector('#imageLeft');
-  var imageRight = document.querySelector('#imageRight');
+  const ratio = 16 / 9;
+  const $bg = $('.bg');
+  const $clipTop = $('#clipTop polygon');
+  const $clipBottom = $('#clipBottom polygon');
+  const $clipBottomVideo = $('#clipBottomVideo polygon');
+  const $clipLeft = $('#clipLeft polygon');
+  const $clipRight = $('#clipRight polygon');
+  const $clipVideo = $('.clipVideo video');
 
     window.addEventListener('resize', function() {
-      console.log('resize');
       fitViewBox();
+      fitVideo();
     });
-
-  fitViewBox();
+    window.addEventListener('load', function() {
+      fitViewBox();
+      fitVideo();
+    });
 
     function fitViewBox() {
       const height = window.innerHeight;
       const width = window.innerWidth;
       const center = `${width/2},${height/2}`;
-      bg.viewBox.baseVal.width = width;
-      bg.viewBox.baseVal.height = height;
-      $(clipTop).attr('points', `0,0 ${width},0 ${center}`);
-      $(clipBottom).attr('points', `0,${height} ${width},${height} ${center}`);
-      $(clipLeft).attr('points', `0,0 0,${height} ${center}`);
-      $(clipRight).attr('points', `${width},0 ${width},${height} ${center}`);
+      $bg.attr('viewBox', `0 0 ${width} ${height}`);
+      $clipTop.attr('points', `0,0 ${width},0 ${center}`);
+      $clipBottom.attr('points', `0,${height} ${width},${height} ${center}`);
+      $clipBottomVideo.attr('points', `0,${height/2} ${width},${height/2} ${width/2},0`);
+      $clipLeft.attr('points', `0,0 0,${height} ${center}`);
+      $clipRight.attr('points', `${width},0 ${width},${height} ${center}`);
+    }
 
-//      $(imageTop).attr('points', `0,0 ${width},0 ${center}`);
-//      $(imageBottom).attr('points', `0,${height} ${width},${height} ${center}`);
-//      $(imageLeft).attr('points', `0,0 0,${height} ${center}`);
-//      $(imageRight).attr('points', `${width},0 ${width},${height} ${center}`);
+    function fitVideo() {
+      const height = window.innerHeight;
+      const width = window.innerWidth;
+      const halfHeight = height / 2;
+      if (width / halfHeight > ratio) {
+        const videoHeight = width * 9 / 16;
+        $clipVideo.css({
+          width: width,
+          height: videoHeight,
+          transform: `translate(0, ${(halfHeight - videoHeight) / 2}px)`,
+        })
+      } else {
+        const videoWidth = halfHeight * 16 / 9;
+        $clipVideo.css({
+          width: videoWidth,
+          height: halfHeight,
+          transform: `translate(${(width - videoWidth) / 2}px, 0)`,
+        });
+      }
     }
 </script>
 </html>
