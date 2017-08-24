@@ -491,5 +491,10 @@ clipPath要素は任意のクリップ領域を定義する．他の要素はこ
 ```
 
 ### appendix
-http://www.atmarkit.co.jp/ait/articles/1206/01/news143.html
-http://defghi1977.html.xdomain.jp/tech/svgMemo/svgMemo_01.htm
+拡張機能
+- https://chrome.google.com/webstore/detail/web-maker/lkfkkhfhhdkiemehlpkgjeojomhpccnh
+資料
+- http://www.atmarkit.co.jp/ait/articles/1206/01/news143.html
+- http://defghi1977.html.xdomain.jp/tech/svgMemo/svgMemo_01.htm
+
+
